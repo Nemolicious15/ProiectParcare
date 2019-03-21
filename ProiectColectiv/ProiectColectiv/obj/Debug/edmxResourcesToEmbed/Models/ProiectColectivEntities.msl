@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProiectColectivModelStoreContainer" CdmEntityContainer="ProiectColectivEntities">
+    <EntitySetMapping Name="LocParcare">
+      <EntityTypeMapping TypeName="ProiectColectivModel.LocParcare">
+        <MappingFragment StoreEntitySet="LocParcare">
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+          <ScalarProperty Name="IdParcare" ColumnName="IdParcare" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Masina">
+      <EntityTypeMapping TypeName="ProiectColectivModel.Masina">
+        <MappingFragment StoreEntitySet="Masina">
+          <ScalarProperty Name="NumarMatricol" ColumnName="NumarMatricol" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parcare">
+      <EntityTypeMapping TypeName="ProiectColectivModel.Parcare">
+        <MappingFragment StoreEntitySet="Parcare">
+          <ScalarProperty Name="Locatie" ColumnName="Locatie" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rezervare">
+      <EntityTypeMapping TypeName="ProiectColectivModel.Rezervare">
+        <MappingFragment StoreEntitySet="Rezervare">
+          <ScalarProperty Name="IdMasina" ColumnName="IdMasina" />
+          <ScalarProperty Name="End" ColumnName="End" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="IdLoc" ColumnName="IdLoc" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="ProiectColectivModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

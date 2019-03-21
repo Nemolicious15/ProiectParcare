@@ -1,0 +1,9 @@
+Z:\CSharp\ProiectParcare\ProiectColectiv\DataBase\bin\Debug\DataBase.dacpac
+Z:\CSharp\ProiectParcare\ProiectColectiv\DataBase\bin\Debug\DataBase.dll
+Z:\CSharp\ProiectParcare\ProiectColectiv\DataBase\bin\Debug\DataBase.pdb
+Z:\CSharp\ProiectParcare\ProiectColectiv\DataBase\obj\Debug\Model.xml
+Z:\CSharp\ProiectParcare\ProiectColectiv\DataBase\obj\Debug\refactor.xml
+Z:\CSharp\ProiectParcare\ProiectColectiv\DataBase\obj\Debug\postdeploy.sql
+Z:\CSharp\ProiectParcare\ProiectColectiv\DataBase\obj\Debug\predeploy.sql
+Z:\CSharp\ProiectParcare\ProiectColectiv\DataBase\obj\Debug\DataBase.dll
+Z:\CSharp\ProiectParcare\ProiectColectiv\DataBase\obj\Debug\DataBase.pdb

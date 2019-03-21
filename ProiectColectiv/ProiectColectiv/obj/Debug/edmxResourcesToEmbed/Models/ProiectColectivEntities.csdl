@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProiectColectivModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ProiectColectivEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="LocParcare" EntityType="ProiectColectivModel.LocParcare" />
+    <EntitySet Name="Masina" EntityType="ProiectColectivModel.Masina" />
+    <EntitySet Name="Parcare" EntityType="ProiectColectivModel.Parcare" />
+    <EntitySet Name="Rezervare" EntityType="ProiectColectivModel.Rezervare" />
+    <EntitySet Name="User" EntityType="ProiectColectivModel.User" />
+    <AssociationSet Name="IdLoc" Association="ProiectColectivModel.IdLoc">
+      <End Role="LocParcare" EntitySet="LocParcare" />
+      <End Role="Rezervare" EntitySet="Rezervare" />
+    </AssociationSet>
+    <AssociationSet Name="IdParcare" Association="ProiectColectivModel.IdParcare">
+      <End Role="Parcare" EntitySet="Parcare" />
+      <End Role="LocParcare" EntitySet="LocParcare" />
+    </AssociationSet>
+    <AssociationSet Name="IdUser" Association="ProiectColectivModel.IdUser">
+      <End Role="User" EntitySet="User" />
+      <End Role="Masina" EntitySet="Masina" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rezervare__IdMas__2E1BDC42" Association="ProiectColectivModel.FK__Rezervare__IdMas__2E1BDC42">
+      <End Role="Masina" EntitySet="Masina" />
+      <End Role="Rezervare" EntitySet="Rezervare" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="LocParcare">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IdParcare" Type="Int32" Nullable="false" />
+    <Property Name="Tip" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Rezervare" Relationship="ProiectColectivModel.IdLoc" FromRole="LocParcare" ToRole="Rezervare" />
+    <NavigationProperty Name="Parcare" Relationship="ProiectColectivModel.IdParcare" FromRole="LocParcare" ToRole="Parcare" />
+  </EntityType>
+  <EntityType Name="Masina">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="NumarMatricol" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="ProiectColectivModel.IdUser" FromRole="Masina" ToRole="User" />
+    <NavigationProperty Name="Rezervare" Relationship="ProiectColectivModel.FK__Rezervare__IdMas__2E1BDC42" FromRole="Masina" ToRole="Rezervare" />
+  </EntityType>
+  <EntityType Name="Parcare">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nume" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Locatie" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LocParcare" Relationship="ProiectColectivModel.IdParcare" FromRole="Parcare" ToRole="LocParcare" />
+  </EntityType>
+  <EntityType Name="Rezervare">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IdLoc" Type="Int32" Nullable="false" />
+    <Property Name="Start" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="End" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="LocParcare" Relationship="ProiectColectivModel.IdLoc" FromRole="Rezervare" ToRole="LocParcare" />
+    <Property Name="IdMasina" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Masina" Relationship="ProiectColectivModel.FK__Rezervare__IdMas__2E1BDC42" FromRole="Rezervare" ToRole="Masina" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nume" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Rol" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Masina" Relationship="ProiectColectivModel.IdUser" FromRole="User" ToRole="Masina" />
+  </EntityType>
+  <Association Name="IdLoc">
+    <End Type="ProiectColectivModel.LocParcare" Role="LocParcare" Multiplicity="1" />
+    <End Type="ProiectColectivModel.Rezervare" Role="Rezervare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocParcare">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rezervare">
+        <PropertyRef Name="IdLoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IdParcare">
+    <End Type="ProiectColectivModel.Parcare" Role="Parcare" Multiplicity="1" />
+    <End Type="ProiectColectivModel.LocParcare" Role="LocParcare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parcare">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LocParcare">
+        <PropertyRef Name="IdParcare" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IdUser">
+    <End Type="ProiectColectivModel.User" Role="User" Multiplicity="1" />
+    <End Type="ProiectColectivModel.Masina" Role="Masina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Masina">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rezervare__IdMas__2E1BDC42">
+    <End Type="ProiectColectivModel.Masina" Role="Masina" Multiplicity="1" />
+    <End Type="ProiectColectivModel.Rezervare" Role="Rezervare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Masina">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rezervare">
+        <PropertyRef Name="IdMasina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

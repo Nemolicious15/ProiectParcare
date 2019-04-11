@@ -15,7 +15,7 @@ namespace ProiectColectiv.Controllers
         public ActionResult Index()
         {
           //  var x = db.Parcare.FirstOrDefault().LocParcare.FirstOrDefault().Rezervare.FirstOrDefault();
-            return View();
+            return View(db.Parcare.ToList());
         }
 
         public ActionResult About()

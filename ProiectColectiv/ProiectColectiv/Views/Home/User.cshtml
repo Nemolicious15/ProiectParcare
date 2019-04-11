@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "User Profile";
+}
+@model IEnumerable<ProiectColectiv.Models.Masina>
+
+<div class="jumbotron">
+    <h1>Profilul userului</h1>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumarMatricol)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NumarMatricol)
+            </td>
+            <td>
+                @Html.ActionLink("Adaugare", "Adaugare")|
+                @Html.ActionLink("Back to Home", "Index")
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,11 +1,37 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@model IEnumerable<ProiectColectiv.Models.Parcare>
 
 <div class="jumbotron">
     <h1>Gestionarea parcarilor</h1>
     <p class="lead">Aplicatia va gestiona locurile de parcare din Cluj.</p>
 </div>
+<p>
+    @Html.ActionLink("User Profile", "User")
+</p>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Locatie)
+        </th>
 
-<div class="row">
-</div>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Locatie)
+            </td>
+        </tr>
+    }
+
+</table>*@

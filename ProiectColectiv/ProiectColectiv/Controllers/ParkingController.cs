@@ -15,7 +15,9 @@ namespace ProiectColectiv.Controllers
         private ProiectColectivEntities db = new ProiectColectivEntities();
         //Index -TODO
 
-        //Create-TODO
+        public async  Task<ActionResult>  Index(){
+            return View();
+}
 
         //Edit
         // GET: Parcare/Edit/5

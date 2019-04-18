@@ -245,6 +245,7 @@
     <Content Include="Views\Parking\Edit.cshtml" />
     <Content Include="Views\Home\User.cshtml" />
     <Content Include="Views\Parking\Create.cshtml" />
+    <Content Include="Views\Parking\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />

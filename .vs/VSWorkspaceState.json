@@ -9,6 +9,6 @@
     "\\ProiectColectiv\\ProiectColectiv\\Views\\Home",
     "\\ProiectColectiv\\ProiectColectiv\\Views\\Parking"
   ],
-  "SelectedNode": "\\ProiectColectiv\\ProiectColectiv\\Views\\Parking",
+  "SelectedNode": "\\ProiectColectiv\\ProiectColectiv\\Controllers\\ParkingController.cs",
   "PreviewInSolutionExplorer": false
 }

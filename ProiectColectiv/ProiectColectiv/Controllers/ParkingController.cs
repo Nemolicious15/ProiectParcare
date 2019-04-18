@@ -60,5 +60,17 @@ namespace ProiectColectiv.Controllers
             }
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Create(Parcare parcare)
+        {
+            db.Parcare.Add(parcare);
+            db.SaveChanges();
+            return View();
+        }
     }
 }

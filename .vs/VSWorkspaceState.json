@@ -6,7 +6,9 @@
     "\\ProiectColectiv\\ProiectColectiv\\Controllers",
     "\\ProiectColectiv\\ProiectColectiv\\Views",
     "\\ProiectColectiv\\ProiectColectiv\\Views\\Car",
-    "\\ProiectColectiv\\ProiectColectiv\\Views\\Home"
+    "\\ProiectColectiv\\ProiectColectiv\\Views\\Home",
+    "\\ProiectColectiv\\ProiectColectiv\\Views\\Parking"
   ],
+  "SelectedNode": "\\ProiectColectiv\\ProiectColectiv\\Views\\Parking",
   "PreviewInSolutionExplorer": false
 }
